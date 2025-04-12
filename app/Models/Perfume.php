@@ -18,13 +18,11 @@ class Perfume extends Model
         'description',
         'available_quantity'
     ];
-
     protected $casts = [
         'category' => 'array',
     ];
-
-    // public function getImageUrlAttribute()
-    // {
-    //     return asset($this->image_path);
-    // }
+    protected function getImagePathAttribute()
+    {
+        return asset($this->attributes['image_path']);
+    }
 }

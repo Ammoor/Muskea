@@ -16,8 +16,7 @@ class PerfumeSeeder extends Seeder
     {
         $perfumesData = json_decode(File::get(database_path('data/perfumesData.json')), true);
         foreach ($perfumesData as $index => $dataItem) {
-            $imagePath = public_path("Images/{$index}.webp");
-            // $imagePath = "Public/Images/{$index}.webp";
+            $imagePath = "Images/{$index}.webp";
             Perfume::create([
                 'name' => $dataItem['productName'],
                 'image_path' => $imagePath,
