@@ -14,7 +14,7 @@ class GetPerfumesController extends Controller
     }
     public function getPerfume(Request $request)
     {
-        return response()->json(Perfume::where('id', $request->perfumeID)->first());
-        // return response()->json(['image' => asset('Images/' . $request->perfumeID . '.webp')]);
+        // return response()->json(Perfume::where('id', $request->perfumeID)->first());
+        return response()->json(['image' => asset('Images/' . $request->perfumeID . '.webp')]);
     }
 }
