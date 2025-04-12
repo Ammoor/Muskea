@@ -16,14 +16,15 @@ class PerfumeSeeder extends Seeder
     {
         $perfumesData = json_decode(File::get(database_path('data/perfumesData.json')), true);
         foreach ($perfumesData as $index => $dataItem) {
-            $imagePath = public_path("Images\\{$index}.webp");
+            $imagePath = public_path("Images/{$index}.webp");
+            // $imagePath = "Public/Images/{$index}.webp";
             Perfume::create([
                 'name' => $dataItem['productName'],
                 'image_path' => $imagePath,
                 'price' => $dataItem['price'],
                 'old_price' => $dataItem['oldPrice'] ?? -1, // -1 means that there is no old price.
                 'size' => $dataItem['size'],
-                'category' => json_encode($dataItem['category']),
+                'category' => $dataItem['category'],
                 'description' => $dataItem['description'],
                 'available_quantity' => $dataItem['availableQuantity'],
             ]);
