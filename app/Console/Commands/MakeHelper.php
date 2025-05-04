@@ -19,7 +19,7 @@ class MakeHelper extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new Helper class';
+    protected $description = 'Create a new helper class';
 
     /**
      * Execute the console command.
